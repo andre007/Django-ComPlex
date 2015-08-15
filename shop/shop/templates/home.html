@@ -1,0 +1,210 @@
+{% extends "index.html" %}
+
+{% block title %}Главная | Com-plex{% endblock %}
+
+{% block content %}
+
+	     
+	<div class="header_slide">
+			<div class="header_bottom_left">				
+				<div class="categories">
+				  <ul>
+				  	<h3>Категории</h3>
+				  	{% for category in categories %}
+				      <li><a href="{{ category.get_absolute_url }}" id = "{{ category.id }}">{{ category.categories }}</a></li>
+				    {% endfor %}
+				       
+				  </ul>
+				</div>					
+	  	     </div>
+					 <div class="header_bottom_right">					 
+					 	 <div class="slider">					     
+							 <div id="slider">
+			                    <div id="mover">
+			                    	{% for banner in banners %}
+			                    	<div id="{{banner.id}" class="slide">			                    
+									 <div class="slider-img">
+									     <a href="{{banner.url}}"><img src="{{ MEDIA_URL }}{{banner.image}}" alt="learn more" /></a>									    
+									  </div>
+						             	<div class="slider-text">
+		                                 <h1><span>{{banner.string_one}}</span></h1>
+		                                 <h2>{{banner.string_two}}</h2>
+									   <div class="features_list">
+									   	<h4>{{banner.string_three}}</h4>							               
+							            </div>
+							             <a href="{{banner.url}}" class="button">{{banner.button_name}}</a>
+					                   </div>			               
+									  <div class="clear"></div>				
+				                  </div>
+				                  {% endfor %}	
+						             	<!--<div class="slide">
+						             		<div class="slider-text">
+		                                 <h1>Внимание!<br><span>АКЦИЯ</span></h1>
+		                                 <h2>Скидка до 40% </h2>
+									   <div class="features_list">
+									   	<h4>Узнать больше про проводимые акции</h4>							               
+							            </div>
+							             <a href="preview.html" class="button">Shop Now</a>
+					                   </div>		
+						             	 <div class="slider-img">
+									     <a href="preview.html"><img src="images/slide-3-image.jpg" alt="learn more" /></a>
+									  </div>						             					                 
+									  <div class="clear"></div>				
+				                  </div>
+				                  <div class="slide">						             	
+					                  <div class="slider-img">
+									     <a href="preview.html"><img src="images/slide-2-image.jpg" alt="learn more" /></a>
+									  </div>
+									  <div class="slider-text">
+		                                 <h1>Внимание!<br><span>АКЦИЯ</span></h1>
+		                                 <h2>Скидка до 10% </h2>
+									   <div class="features_list">
+									   	<h4>Узнать больше про проводимые акции</h4>							               
+							            </div>
+							             <a href="preview.html" class="button">Заказать сейчас</a>
+					                   </div>	
+									  <div class="clear"></div>				
+				                  </div>-->												
+			                 </div>		
+		                </div>
+					 <div class="clear"></div>					       
+		         </div>
+		      </div>
+		   <div class="clear"></div>
+		</div>
+   </div>-->
+ <div class="main">
+    <div class="content">
+    	<div class="content_top">
+    		<div class="heading">
+    		<h3>Новая продукция</h3>
+    		</div>
+    		<div class="clear"></div>
+    	</div>
+	      <div class="section group">
+	      	{% for new_prod in new_prods %}
+				<div class="grid_1_of_4 images_1_of_4">
+					 <a href="/product_detail/{{ product.id }}"><img src="{{MEDIA_URL}}{{product.mainphoto}}" alt="" /></a>
+					 <h2>{{product.short_text}}</h2>
+					<div class="price-details">
+				       <div class="price-number">
+							<p><span class="rupees">{{product.price}}</span></p>
+					    </div>
+					       		<div class="add-cart">								
+									<h4><a href="/product_detail/{{ product.id }}">Заказать</a></h4>
+							     </div>
+							 <div class="clear"></div>
+					</div>
+					 
+				</div>
+				{% endfor %}
+				<!--<div class="grid_1_of_4 images_1_of_4">
+					<a href="preview.html"><img src="images/feature-pic2.jpg" alt="" /></a>
+					 <h2>Lorem Ipsum is simply </h2>
+					<div class="price-details">
+				       <div class="price-number">
+							<p><span class="rupees">$899.75</span></p>
+					    </div>
+					       		<div class="add-cart">								
+									<h4><a href="preview.html">Заказать</a></h4>
+							     </div>
+							 <div class="clear"></div>
+					</div>
+				    
+				</div>
+				<div class="grid_1_of_4 images_1_of_4">
+					<a href="preview.html"><img src="images/feature-pic3.jpg" alt="" /></a>
+					 <h2>Lorem Ipsum is simply </h2>
+					 <div class="price-details">
+				       <div class="price-number">
+							<p><span class="rupees">$599.00</span></p>
+					    </div>
+					       		<div class="add-cart">								
+									<h4><a href="preview.html">Заказать</a></h4>
+							     </div>
+							 <div class="clear"></div>
+					</div>
+				</div>
+				<div class="grid_1_of_4 images_1_of_4">
+					<a href="preview.html"><img src="images/feature-pic4.jpg" alt="" /></a>
+					 <h2>Lorem Ipsum is simply </h2>
+					<div class="price-details">
+				       <div class="price-number">
+							<p><span class="rupees">$679.87</span></p>
+					    </div>
+					       		<div class="add-cart">								
+									<h4><a href="preview.html">Заказать</a></h4>
+							     </div>
+							 <div class="clear"></div>
+					</div>				     
+				</div>-->
+			</div>
+			
+<!-- DELETE THIS IF ALL WORKS   <div class="footer">
+   	  <div class="wrap">	
+	     <div class="section group">
+				<div class="col_1_of_4 span_1_of_4">
+						<h4>Карта сайта</h4>
+						<ul>
+						<li><a href="about.html">Главная</a></li>
+						<li><a href="contact.html">О нас</a></li>
+						<li><a href="#">Доставка</a></li>
+						<li><a href="delivery.html">Контакты</a></li>
+						<li><a href="delivery.html">Корзина</a></li>
+						</ul>
+					</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>Разработчики</h4>
+						<ul>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="contact.html">Customer Service</a></li>
+						</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>Учетная запись</h4>
+						<ul>
+							<li><a href="contact.html">Регистрация</a></li>
+							<li><a href="index.html">Мои заказы</a></li>
+							<li><a href="contact.html">Помощь</a></li>
+						</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>Связаться с нами</h4>
+						<ul>
+							<li><span>+91-123-456789</span></li>
+							<li><span>+00-123-000000</span></li>
+						</ul>
+						<div class="social-icons">
+							<h4>Follow Us</h4>
+					   		  <ul>
+							      <li><a href="#" target="_blank"><img src="{{ STATIC_URL }}images/facebook.png" alt="" /></a></li>
+							      <li><a href="#" target="_blank"><img src="{{ STATIC_URL }}images/twitter.png" alt="" /></a></li>
+							      <li><a href="#" target="_blank"><img src="{{ STATIC_URL }}images/skype.png" alt="" /> </a></li>
+							      <li><a href="#" target="_blank"> <img src="{{ STATIC_URL }}images/dribbble.png" alt="" /></a></li>
+							      <li><a href="#" target="_blank"> <img src="{{ STATIC_URL }}images/linkedin.png" alt="" /></a></li>
+							      <div class="clear"></div>
+						     </ul>
+   	 					</div>
+				</div>
+			</div>			
+        </div>
+        <div class="copy_right">
+				<p>Company Name © All rights Reseverd | Design by  <a href="http://w3layouts.com">W3Layouts</a> </p>
+		   </div>
+    </div>
+    <script type="text/javascript">
+		$(document).ready(function() {			
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			
+		});
+	</script>
+    <a href="#" id="toTop"><span id="toTopHover"> </span></a>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="{{ STATIC_URL }}js/move-top.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/easing.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/startstop-slider.js"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>
+-->
+{% endblock %}
