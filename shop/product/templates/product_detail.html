@@ -3,11 +3,6 @@
 {% block title %}Главная | Com-plex{% endblock %}
 
 {% block content %}
-<script type="text/javascript" src="static/js/cart.js"></script><!--POSSIBLE REMOVE THIS TO EXTRA-->
-<script type="text/javascript">
-function add_cart(){
-	alert('Товар успешно добавлен')
-}
 
 </script>
 	     
@@ -50,7 +45,7 @@ function add_cart(){
 		  </div>
 		  <div class="price" style="border:none">
 					       		<div class="add-cart" style="float:none">								
-									<h4><a href="" id = "cart_add" onclick=" add_cart()">Добавить в корзину</a></h4>
+									<h4><a href="" id = "{{product.id}}" onclick=" add_cart()">Добавить в корзину</a></h4>
 							     </div>
 							 <div class="clear"></div>
 					</div>
