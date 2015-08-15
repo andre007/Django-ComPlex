@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'banner',
+    'product',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -88,7 +89,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+DEFAULT_BANNER_TITLE = 3
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 

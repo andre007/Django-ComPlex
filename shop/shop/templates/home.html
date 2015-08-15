@@ -24,7 +24,9 @@
 			                    	{% for banner in banners %}
 			                    	<div id="{{banner.id}" class="slide">			                    
 									 <div class="slider-img">
-									     <a href="{{banner.url}}"><img src="{{ MEDIA_URL }}{{banner.image}}" alt="learn more" /></a>									    
+									     <!--<a href="{{banner.url}}"><img src="{{ MEDIA_URL }}{{banner.image}}" alt="learn more" />-->
+									      <a href="{{banner.url}}"><img src="/media/Banner/about_img.jpg" alt="learn more" />
+									 </a>									    
 									  </div>
 						             	<div class="slider-text">
 		                                 <h1><span>{{banner.string_one}}</span></h1>

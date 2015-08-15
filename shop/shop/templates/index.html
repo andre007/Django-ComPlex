@@ -5,14 +5,14 @@
 <!--HARDCORE-->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="/static/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="/static/css/easy-responsive-tabs.css" rel="stylesheet" type="text/css" media="all"/>
-<link rel="stylesheet" href="static/css/global.css">
-<script type="text/javascript" src="static/js/jquery-1.7.2.min.js"></script> 
-<script type="text/javascript" src="static/js/move-top.js"></script>
-<script type="text/javascript" src="static/js/easing.js"></script>
-<script type="text/javascript" src="static/js/startstop-slider.js"></script>
+<link href="{{STATIC_URL}}css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="{{STATIC_URL}}css/slider.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="{{STATIC_URL}}css/easy-responsive-tabs.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{STATIC_URL}}css/global.css">
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.7.2.min.js"></script> 
+<script type="text/javascript" src="{{STATIC_URL}}js/move-top.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/easing.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/startstop-slider.js"></script>
 <!-- HARDCORE-->
  {% block extra_css %}{% endblock %}
 {% load staticfiles %}
@@ -37,7 +37,7 @@
 		</div>
 		<div class="header_top">
 			<div class="logo">
-				<a href="index.html"><img src="static/images/logo.png" alt="" /></a> <!--CHNGE THIS FUCKING SHIT! -->
+				<a href="index.html"><img src="{{STATIC_URL}}images/logo.png" alt="" /></a> <!--CHNGE THIS FUCKING SHIT! -->
 			</div>
 			  <!--<div class="cart">
 			  	   <p><span><a href="cart.html">Корзина:</a></span><div id="dd" class="wrapper-dropdown-2"> 0 товаров - $0.00
@@ -258,11 +258,11 @@
 						<div class="social-icons">
 							<h4>Follow Us</h4>
 					   		  <ul>
-							      <li><a href="#" target="_blank"><img src="static/images/facebook.png" alt="" /></a></li>
-							      <li><a href="#" target="_blank"><img src="static/images/twitter.png" alt="" /></a></li>
-							      <li><a href="#" target="_blank"><img src="static/images/skype.png" alt="" /> </a></li>
-							      <li><a href="#" target="_blank"> <img src="static/images/dribbble.png" alt="" /></a></li>
-							      <li><a href="#" target="_blank"> <img src="static/images/linkedin.png" alt="" /></a></li>
+							      <li><a href="#" target="_blank"><img src="{{STATIC_URL}}images/facebook.png" alt="" /></a></li>
+							      <li><a href="#" target="_blank"><img src="{{STATIC_URL}}images/twitter.png" alt="" /></a></li>
+							      <li><a href="#" target="_blank"><img src="{{STATIC_URL}}images/skype.png" alt="" /> </a></li>
+							      <li><a href="#" target="_blank"> <img src="{{STATIC_URL}}images/dribbble.png" alt="" /></a></li>
+							      <li><a href="#" target="_blank"> <img src="{{STATIC_URL}}images/linkedin.png" alt="" /></a></li>
 							      <div class="clear"></div>
 						     </ul>
    	 					</div>
