@@ -2,16 +2,11 @@
 
 from django.shortcuts import render, render_to_response
 from product.models import Product, Categories
-#from cart import Cart
+from cart import Cart
 from django.template.loader import get_template
 from django.template import Context
 from django.http import HttpResponse
-#def product(request):
-#    categories = Categories.objects.all()
-#   defaultext = DefaultText.objects.filter(state=1)
-#    data = {'categories': categories, 
-#    'defaultext' : defaultext,}
-#    return render(request, 'portfolio.html', data)
+
 
 
 def product_list(request, id):
