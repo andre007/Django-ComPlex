@@ -30,17 +30,16 @@ def product_detail(request, id):
     return render(request, 'product_detail.html', data)
 
 def add_to_cart(request, product_id, quantity):
-    print("success!")
     product = Product.objects.get(id=product_id)
     cart = Cart(request)
-    print("Debug print")
     #data = {'product': product}
     cart.add(product, product.price, quantity)
-    print("DOUBLE SUCCESS!!!!")
     return request
 
 def remove_from_cart(request, product_id):
+    print("Delete function starts")
     product = Product.objects.get(id=product_id)
+    print(product)
     cart = Cart(request)
     cart.remove(product)
 
