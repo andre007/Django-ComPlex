@@ -15,3 +15,9 @@ function remove_cart(id){
 	alert('Товар успешно удален')
 	location.reload()
 }
+
+function add_booking(){
+	var booking_url = "booking/"
+	$.get(booking_url)
+	alert("Debug")
+}

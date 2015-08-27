@@ -22,10 +22,13 @@
 							 <div id="slider">
 			                    <div id="mover">
 			                    	{% for banner in banners %}
-			                    	<div id="{{banner.id}" class="slide">			                    
+			                    	{% if banner.id == 1 %}
+			                    	<div id="slide-1" class="slide">
+			                    	{% else %}
+			                    	<div  class="slide">
+			                    	{% endif %}			                    
 									 <div class="slider-img">
-									     <!--<a href="{{banner.url}}"><img src="{{ MEDIA_URL }}{{banner.image}}" alt="learn more" />-->
-									      <a href="{{banner.url}}"><img src="/media/Banner/about_img.jpg" alt="learn more" />
+									      <a href="{{banner.url}}"><img src="{{ MEDIA_URL }}{{banner.image}}" alt="learn more" />
 									 </a>									    
 									  </div>
 						             	<div class="slider-text">

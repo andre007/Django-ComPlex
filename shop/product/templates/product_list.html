@@ -84,7 +84,7 @@
 	      <div class="section group">
 	      	{% for product in products %}
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="/product_detail/{{ product.id }}"><img src="{{MEDIA_URL}}{{product.mainphoto}}" alt="" /></a>
+					 <a href="/product_detail/{{ product.id }}"><img src="{{product.mainphoto.url}}" alt="" /></a>
 					 <h2>{{product.short_text}}</h2>
 					<div class="price-details">
 				       <div class="price-number">

@@ -48,9 +48,16 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'haystack',
     'banner',
     'product',
     'cart',
+    'profile',
+    'booking',
+    'contact',
+    'about',
+    'delivery',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -77,6 +84,15 @@ DATABASES = {
     }
 }
 
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    },
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -95,7 +111,10 @@ DEFAULT_BANNER_TITLE = 3
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+#MEDIA_ROOT = 'home/andrey/Projects/printershop/Django-ComPlex/shop/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+#ADMIN_MEDIA_PREFIX = '/media/admin/'
 #MEDIA_ROOT = '/home/ukrainem/domains/ukrainemotors.com/public_html/media/'
 #STATIC_ROOT = '/home/ukrainem/domains/ukrainemotors.com/public_html/static/'
 STATICFILES_DIRS = (

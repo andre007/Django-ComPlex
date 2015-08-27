@@ -18,7 +18,7 @@ class Banner(models.Model):
     string_two = models.CharField(max_length=40, verbose_name=u'строка 2')
     string_three = models.CharField(max_length=40, verbose_name=u'строка 2')
 
-    image = models.ImageField(upload_to='media/Banner/',
+    image = models.ImageField(upload_to='Banner/',
                               verbose_name=u'Изображение',
                               blank=True,
                               null=True)

@@ -22,7 +22,7 @@
 							   <div id="products">
 								<div class="slides_container">
 									{% for photo in product.photos.all %}
-									<a href="#" target="_blank"><img src="{{photo}}" alt=" " /></a>
+									<a href="#" target="_blank"><img src="{{MEDIA_URL}}{{photo}}" alt=" " /></a>
 									{% endfor %}
 								</div>
 								<ul class="pagination">

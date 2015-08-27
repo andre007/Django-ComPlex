@@ -14,13 +14,13 @@ class Product(models.Model):
         (HOT_NEW, 'Hot New'),
     )
 
-    name = models.CharField(max_length=50, verbose_name="Мотор")
+    name = models.CharField(max_length=50, verbose_name="Продукт")
     full_text = models.TextField()
     short_text = models.TextField()
     price = models.IntegerField()
     date_creation = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey('Categories')
-    mainphoto =  models.ImageField(upload_to='media/PhotoImage/',
+    mainphoto =  models.ImageField(upload_to='PhotoImage/',
                                      verbose_name=u'ГлавФото')
     photos = models.ManyToManyField('Photo',
                                     blank=True, null=True)
@@ -56,7 +56,7 @@ class Categories(models.Model):
 
 
 class Photo(models.Model):
-    photography =  models.ImageField(upload_to='media/PhotoImage/',
+    photography =  models.ImageField(upload_to='Image/',
                                      verbose_name=u'Фотография')
     photo_description = models.CharField(max_length=50, 
                                          verbose_name=u'Описание фотографии')
@@ -64,7 +64,7 @@ class Photo(models.Model):
 
 
 class Miniphoto(models.Model):
-    miniphoto =  models.ImageField(upload_to='media/MiniPhotoImage/',
+    miniphoto =  models.ImageField(upload_to='MiniPhotoImage/',
                                      verbose_name=u'Фотография')
 
     class Meta:
