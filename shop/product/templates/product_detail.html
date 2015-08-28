@@ -22,12 +22,12 @@
 							   <div id="products">
 								<div class="slides_container">
 									{% for photo in product.photos.all %}
-									<a href="#" target="_blank"><img src="{{MEDIA_URL}}{{photo}}" alt=" " /></a>
+									<a href="#" target="_blank"><img src="{{MEDIA_URL}}{{photo.photography}}" alt=" " /></a>
 									{% endfor %}
 								</div>
 								<ul class="pagination">
 									{% for miniphoto in product.miniphotos.all %}
-									<li><a href="#"><img src="{{MEDIA_URL}}{{miniphoto}}" alt=" " /></a></li>
+									<li><a href="#"><img src="{{MEDIA_URL}}{{miniphoto.miniphoto}}" alt=" " /></a></li>
 									{% endfor %}
 								</ul>
 							</div>

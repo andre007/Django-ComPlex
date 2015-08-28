@@ -89,14 +89,15 @@
 	      <div class="section group">
 	      	{% for new_prod in new_prods %}
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="/product_detail/{{ product.id }}"><img src="{{MEDIA_URL}}{{product.mainphoto}}" alt="" /></a>
-					 <h2>{{product.short_text}}</h2>
+					 <a href="/product_detail/{{ product.id }}"><img src="{{MEDIA_URL}}{{new_prod.mainphoto}}" alt="" /></a>
+					 <h2>{{new_prod.name}}</h2>
+					 <h4>{{new_prod.short_text}}</h4>
 					<div class="price-details">
 				       <div class="price-number">
-							<p><span class="rupees">{{product.price}}</span></p>
+							<p><span class="rupees">{{new_prod.price}}</span></p>
 					    </div>
 					       		<div class="add-cart">								
-									<h4><a href="/product_detail/{{ product.id }}">Заказать</a></h4>
+									<h4><a href="/product_detail/{{ new_prod.id }}">Заказать</a></h4>
 							     </div>
 							 <div class="clear"></div>
 					</div>
