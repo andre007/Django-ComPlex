@@ -21,7 +21,7 @@ def product_list(request, id):
     #html = prodlist_template.render(Context(data))
     #return HttpResponse(html)
 
-
+CART_ID = 'CART-ID'
 
 def product_detail(request, id):
     categories = Categories.objects.all()
@@ -32,9 +32,13 @@ def product_detail(request, id):
 def add_to_cart(request, product_id, quantity):
     product = Product.objects.get(id=product_id)
     cart = Cart(request)
+    #print("Cart made")
+    #print(request.session[CART_ID])
     #data = {'product': product}
     cart.add(product, product.price, quantity)
-    return request
+    #print ("Cart saved")
+    #print(request.session[CART_ID])
+    #return request
 
 def remove_from_cart(request, product_id):
     print("Delete function starts")
@@ -44,4 +48,7 @@ def remove_from_cart(request, product_id):
     cart.remove(product)
 
 def get_cart(request):
-    return render(request, 'cart.html', dict(cart=Cart(request)))
+    cart = Cart(request)
+    data = {"cart":cart}
+    #print(request.session[CART_ID])
+    return render(request, 'cart.html', data)

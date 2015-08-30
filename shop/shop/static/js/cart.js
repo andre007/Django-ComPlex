@@ -4,7 +4,7 @@ function add_cart(id, quantity){
 	var add_string = "/add_to_cart/" + id + "/"  + quantity;
 
 	$.get(add_string)
-	alert("Debug text")
+	alert('Товар успешно добавлен')
 }
 
 

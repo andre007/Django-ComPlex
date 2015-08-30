@@ -96,7 +96,11 @@
 				</div>
 				{% endfor %}
 				<div class="price-details">
-				<div class = "add-cart"><a href = "booking">Оформить заказ</a></div>
+				{% if custom_user.confirmed %}
+					<div class = "add-cart"><a href = "/registered_booking/">Оформить заказ</a></div>
+				{% else %}
+					<div class = "add-cart"><a href = "/booking/">Оформить заказ</a></div>
+				{% endif %}
 				</div>
 				
 				
