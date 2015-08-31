@@ -1,0 +1,5 @@
+Имя покупателя: {{user_name}}
+Фамилия: {{user_sec_name}}
+Эл.почта: {{user_mail}}
+Контактный телефон: {{user_phone}}
+Общая сумма: {{total_price}}

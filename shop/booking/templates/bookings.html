@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block title %}Оформление заказа | Com-plex{% endblock %}
+
+{% block content %}
+<div class="contact-form">
+					<h2>Заполните, пожалуста, форму, или авторизуйтесь.</h2>
+					<form method="post" action="">
+						{% csrf_token %} 
+						<div>
+							<span><label>Имя</label></span>
+							<span>{{ form.user_name }}</span>
+						</div>
+						<div>
+							<span><label>Фамилия</label></span>
+							<span>{{ form.user_sec_name }}</span>
+						</div>
+						<div>
+							<span><label>Почта</label></span>
+							<span>{{ form.user_mail }}</span>
+						</div>
+						<div>
+							<span><label>Котактный телефон</label></span>
+							<span>{{ form.user_phone }}</span>
+						</div>
+						<div>
+							<span><input type="submit" value="Оформить заявку" class="myButton"></span>
+						</div>
+					</form>
+				</div>
+{% endblock %}

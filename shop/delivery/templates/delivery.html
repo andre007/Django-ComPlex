@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block title %}Доставка| Com-plex{% endblock %}
+
+{% block content %}
+<div class="main">
+    <div class="content">
+    	<div class="section group">
+    		{% for column in columns %}
+				<div class="grid_1_of_3 images_1_of_3">
+					  <img src="{{MEDIA_URL}}{{column.photo}}" alt="" />
+					  <h3>{{column.header}}</h3>
+					  <p>{{column.column_text}}</p>
+				</div>
+				{% endfor %}
+			</div>	
+		<div class="faqs">
+    	  <h2>Часто задаваемые вопросы</h2>	          	
+            <div id="posts">
+            	{% for faq in faqs %}
+			    <div class="tab bar">
+                    <h4 class="post-title">{{faq.question}}</h4>
+                </div>
+			    <div class="panel margin-lr-7">
+            		<p>{{faq.answer}}</p>
+			    </div>	
+			    {% endfor %}	   
+		       </div>
+		      </div>	
+         </div> 
+    </div>
+ </div>
+
+{% endblock %}
