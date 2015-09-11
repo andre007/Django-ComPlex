@@ -11,7 +11,10 @@ def thanx(request):
 	return render(request, 'feedback_thanx.html', {'no_data':0})
 
 def contact(request):
-	companyinfo = CompanyInfo.objects.all()
+	try:
+		companyinfo = CompanyInfo.objects.get()
+	except CompanyInfo.DoesNotExist:
+		companyinfo = None
 	if request.method == 'POST':
 		form = FeedBackForm(request.POST, request.FILES)
 		if form.is_valid():
@@ -27,6 +30,7 @@ def contact(request):
 			return HttpResponseRedirect("/feedback_thanx/")
 	else:
 		form = FeedBackForm()
-    	data = {'form': form}
+    	data = {'form': form, 'companyinfo':companyinfo}
+    	#print(companyinfo.name)
 
     	return render(request, 'contact.html', data)
