@@ -8,6 +8,7 @@ from django.http import Http404, HttpResponseRedirect
 from django.core.mail import send_mail
 from booking.mailing import email_message
 from profile.models import CustomUser
+import random
 # Create your views here.
 
 def thanx(request):
@@ -27,7 +28,6 @@ def booking(request):
         if form.is_valid():
             # file is saved
             #form.save()
-            i = 1
             total_price = 0
             for item in item_list:
                 total_price += item.product.price
@@ -35,13 +35,13 @@ def booking(request):
             user_sec_name = form.cleaned_data['user_sec_name']
             user_mail = form.cleaned_data['user_mail']
             user_phone =form.cleaned_data['user_phone']
-            booking_item = Booking(name = "Заказ номер" + " " + str(i), user_name = user_name, user_sec_name=user_sec_name, user_mail=user_mail, user_phone = user_phone, total_sum=total_price)
+            num  = random.randint(1, 10000)
+            booking_item = Booking(name = "Заказ id" + " " + str(num), user_name = user_name, user_sec_name=user_sec_name, user_mail=user_mail, user_phone = user_phone, total_sum=total_price)
             booking_item.save()
             message = email_message(user_name, user_sec_name, user_mail, user_phone, total_price)
             print(item_list)
             for item in item_list:
                 booking_item.items.add(item)
-            i+=1
         return HttpResponseRedirect("/thanx/")
     else:
         form = BookingForm()
